@@ -54,5 +54,9 @@
     "pretty-quick": "3.0.0",
     "react-test-renderer": "16.13.1",
     "typescript": "^3.8.3"
+  },
+  "engines": {
+    "node": "14.10.0",
+    "yarn": "1.22.4"
   }
 }
