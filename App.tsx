@@ -1,20 +1,12 @@
 // imports from vendors
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AppNavigator from './src/navigation/AppNavigator/AppNavigator';
 
 const App = () => (
-  <SafeAreaView>
-    <View style={styles.body}>
-      <Text>Hello world</Text>
-    </View>
-  </SafeAreaView>
+  <SafeAreaProvider>
+    <AppNavigator />
+  </SafeAreaProvider>
 );
-
-const styles = StyleSheet.create({
-  body: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-});
 
 export default App;
