@@ -1,6 +1,6 @@
 import { NavigationContainerRef, StackActions } from '@react-navigation/native';
 import { Routes } from './routes';
-import { AppParamList } from './AppNavigator/types';
+import { RootParamList } from './RootNavigator/types';
 
 type Navigator = NavigationContainerRef | null;
 
@@ -19,7 +19,7 @@ class NavigationService {
     return this._navigator;
   }
 
-  public navigate<R extends Routes>(routeName: R, params?: AppParamList[R]) {
+  public navigate<R extends Routes>(routeName: R, params?: RootParamList[R]) {
     this.navigator?.navigate({ name: routeName, params });
   }
 
@@ -27,7 +27,7 @@ class NavigationService {
     this.navigator?.goBack();
   }
 
-  public push<R extends Routes>(routeName: R, params?: AppParamList[R]) {
+  public push<R extends Routes>(routeName: R, params?: RootParamList[R]) {
     this.navigator?.dispatch(StackActions.push(routeName, params));
   }
 

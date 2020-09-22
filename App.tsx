@@ -4,14 +4,14 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // imports from navigation
-import AppNavigator from './src/navigation/AppNavigator/AppNavigator';
+import RootNavigator from './src/navigation/RootNavigator/RootNavigator';
 
 import reduxStore from './src/reduxStore';
 
 const App = () => (
   <ReduxProvider store={reduxStore}>
     <SafeAreaProvider>
-      <AppNavigator />
+      <RootNavigator />
     </SafeAreaProvider>
   </ReduxProvider>
 );

@@ -3,10 +3,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import AuthNavigator from '../AuthNavigator/AuthNavigation';
 import NavigationService from '../NavigationService';
 
-const AppNavigator: FC = () => (
+const RootNavigator: FC = () => (
   <NavigationContainer ref={(navigatorRef) => NavigationService.setTopLevelNavigator(navigatorRef)}>
     <AuthNavigator />
   </NavigationContainer>
 );
 
-export default AppNavigator;
+export default RootNavigator;
