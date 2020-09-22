@@ -1,10 +1,21 @@
 import React, { FC } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ImageBackground, SafeAreaView } from 'react-native';
+import styles from './styles';
 
 const SignIn: FC = () => {
   return (
-    <View>
-      <Text>Sign in screen</Text>
+    <View style={styles.container}>
+      <ImageBackground
+        source={require('../../resources/images/background.png')}
+        style={styles.background}
+        resizeMode="cover"
+      >
+        <SafeAreaView>
+          <View style={styles.content}>
+            <Text>Sign in screen</Text>
+          </View>
+        </SafeAreaView>
+      </ImageBackground>
     </View>
   );
 };
