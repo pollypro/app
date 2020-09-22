@@ -6,14 +6,6 @@ import HttpError from './httpError';
 
 const HttpClient = axios.create();
 
-HttpClient.interceptors.request.use((config) => {
-  const authToken = 1;
-  if (authToken) {
-    config.headers.common['Authorization'] = `Bearer ${authToken}`;
-  }
-  return config;
-});
-
 HttpClient.interceptors.response.use(
   (response) => response,
   (error) => {
