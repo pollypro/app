@@ -1,5 +1,8 @@
 import { AuthParamList } from '../AuthNavigator/types';
+import { AppParamList } from '../AppNavigator/types';
 
-export interface RootNavigatorProps {}
+export interface RootNavigatorProps {
+  token?: string;
+}
 
-export type RootParamList = AuthParamList;
+export type RootParamList = AuthParamList & AppParamList;
