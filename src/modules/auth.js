@@ -42,6 +42,7 @@ export const authenticate = (email, password) => (dispatch) => {
     .post(coreApiUrl('/auth/authenticate'), { email, password })
     .then(({ data }) => {
       dispatch({ type: AUTH_SUCCESS, payload: { token: data.token } });
+      httpClient.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
       return data;
     })
     .catch(({ error }) => {
@@ -51,5 +52,6 @@ export const authenticate = (email, password) => (dispatch) => {
 };
 
 export const destroyAuth = () => (dispatch) => {
+  delete httpClient.defaults.headers.common['Authorization'];
   dispatch({ type: AUTH_CLEANUP });
 };
