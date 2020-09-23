@@ -35,6 +35,8 @@ export default createReducer(
   initialState,
 );
 
+export const cleanupAuth = () => ({ type: AUTH_CLEANUP });
+
 export const authenticate = (email, password) => (dispatch) => {
   dispatch({ type: AUTH_REQUEST });
 
@@ -52,5 +54,5 @@ export const authenticate = (email, password) => (dispatch) => {
 
 export const destroyAuth = () => (dispatch) => {
   delete httpClient.defaults.headers.common['Authorization'];
-  dispatch({ type: AUTH_CLEANUP });
+  dispatch(cleanupAuth());
 };
