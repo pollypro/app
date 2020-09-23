@@ -47,7 +47,6 @@ export const authenticate = (email, password) => (dispatch) => {
     })
     .catch(({ error }) => {
       dispatch({ type: AUTH_FAILURE, payload: { error } });
-      throw error;
     });
 };
 
