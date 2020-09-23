@@ -5,21 +5,4 @@ export default StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 38,
   },
-  list: {
-    width: 300,
-    marginBottom: 29,
-  },
-  submitButton: {
-    borderRadius: 20,
-    backgroundColor: '#2662F0',
-    width: 126,
-    height: 36,
-  },
-  submitButtonActive: {
-    backgroundColor: '#0f4cdd',
-  },
-  submitButtonText: {
-    color: 'white',
-    fontSize: 14,
-  },
 });
