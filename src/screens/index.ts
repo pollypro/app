@@ -1,4 +1,5 @@
 export { default as ForgetPassword } from './ForgetPassword/ForgetPassword';
+export { default as Result } from './Result/Result';
 export { default as Results } from './Results/Results';
 export { default as Service } from './Service/Service';
 export { default as Services } from './Services/Services';
