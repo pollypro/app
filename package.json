@@ -38,7 +38,6 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@ant-design/react-native": "4.0.0",
     "@eva-design/eva": "2.0.0",
     "@react-native-community/async-storage": "1.12.0",
     "@react-native-community/masked-view": "0.1.10",
