@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 
-const Results: FC = () => {
+const Results = () => {
   return (
     <View>
       <Text>Results screen</Text>

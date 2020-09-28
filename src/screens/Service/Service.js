@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 
-const Service: FC = () => {
+const Service = () => {
   return (
     <View>
       <Text>Service screen</Text>
