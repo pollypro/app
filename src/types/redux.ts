@@ -2,6 +2,7 @@
 import { IHttpError } from '../utils/httpError';
 
 // imports from types
+import { User } from './users';
 
 type ListNode<T> = {
   isLoading: boolean;
@@ -40,4 +41,5 @@ export type State = {
     token?: string;
     error?: IHttpError;
   };
+  self: ItemNode<User>;
 };
