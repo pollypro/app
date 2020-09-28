@@ -9,13 +9,13 @@ import { ConnectedProps, connect } from 'react-redux';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // imports from navigation
-import RootNavigator from './src/navigation/RootNavigator/RootNavigator';
+import RootNavigator from '../../navigation/RootNavigator/RootNavigator';
 
 // imports from modules
-import { getSelf } from './src/modules/self';
-import { replaceAuth, destroyAuth } from './src/modules/auth';
+import { getSelf } from '../../modules/self';
+import { replaceAuth, destroyAuth } from '../../modules/auth';
 
-import reduxStore from './src/reduxStore';
+import reduxStore from '../../reduxStore';
 
 const reduxConnector = connect(null, { getSelf, replaceAuth, destroyAuth });
 
