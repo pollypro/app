@@ -1,6 +1,6 @@
 // imports from vendors
 import React, { FC } from 'react';
-import { ImageBackground, SafeAreaView } from 'react-native';
+import { ImageBackground, SafeAreaView, View } from 'react-native';
 
 // imports from components
 import { Header } from '..';
@@ -15,8 +15,10 @@ const AppLayout: FC = ({ children }) => (
     resizeMode="cover"
   >
     <SafeAreaView>
-      <Header />
-      {children}
+      <View style={styles.content}>
+        <Header />
+        {children}
+      </View>
     </SafeAreaView>
   </ImageBackground>
 );
