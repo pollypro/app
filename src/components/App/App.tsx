@@ -1,5 +1,6 @@
 // imports from vendors
 import React, { FC, useState, useEffect } from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import AsyncStorage from '@react-native-community/async-storage';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
@@ -33,9 +34,15 @@ const Main: FC<Props> = ({ getSelf, replaceAuth, destroyAuth }) => {
           replaceAuth(token)
             .then(() => getSelf())
             .catch(() => replaceAuth(null))
-            .then(() => setIsLoading(false));
+            .then(() => {
+              setIsLoading(false);
+              SplashScreen.hide();
+            });
         } else {
-          destroyAuth().then(() => setIsLoading(false));
+          destroyAuth().then(() => {
+            setIsLoading(false);
+            SplashScreen.hide();
+          });
         }
       };
 
