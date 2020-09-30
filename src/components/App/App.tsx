@@ -33,7 +33,7 @@ const Main: FC<Props> = ({ getSelf, replaceAuth, destroyAuth }) => {
         if (token) {
           replaceAuth(token)
             .then(() => getSelf())
-            .catch(() => replaceAuth(null))
+            .catch(destroyAuth)
             .then(() => {
               setIsLoading(false);
               SplashScreen.hide();
