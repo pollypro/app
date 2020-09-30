@@ -10,4 +10,10 @@ export default StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 20,
   },
+  title: {
+    fontSize: 28,
+    color: '#414D55',
+    lineHeight: 40,
+    marginBottom: 20,
+  },
 });

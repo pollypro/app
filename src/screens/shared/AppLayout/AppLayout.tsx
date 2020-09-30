@@ -1,6 +1,6 @@
 // imports from vendors
 import React, { FC } from 'react';
-import { ImageBackground, SafeAreaView, View } from 'react-native';
+import { ImageBackground, SafeAreaView, View, Text } from 'react-native';
 
 // imports from components
 import { Header } from '..';
@@ -8,7 +8,11 @@ import { Header } from '..';
 // imports from styles
 import styles from './styles';
 
-const AppLayout: FC = ({ children }) => (
+type Props = {
+  title?: string;
+};
+
+const AppLayout: FC<Props> = ({ children, title }) => (
   <ImageBackground
     source={require('../../../resources/images/background.png')}
     style={styles.background}
@@ -17,6 +21,7 @@ const AppLayout: FC = ({ children }) => (
     <SafeAreaView>
       <View style={styles.content}>
         <Header />
+        {title && <Text style={styles.title}>{title}</Text>}
         {children}
       </View>
     </SafeAreaView>
