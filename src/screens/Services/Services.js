@@ -1,7 +1,7 @@
 // imports from vendors
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
-import { Text } from '@ui-kitten/components';
+import { View, Text } from 'react-native';
+import Button from 'react-native-button';
 import { connect } from 'react-redux';
 
 // imports from components
@@ -13,7 +13,7 @@ import { getServices, cleanupServices } from '../../modules/services';
 // imports from styles
 import styles from './styles';
 
-const Services = ({ navigation, getServices, cleanupServices }) => {
+const Services = ({ navigation, services, getServices, cleanupServices }) => {
   useEffect(() => {
     getServices();
     return () => {
@@ -24,10 +24,25 @@ const Services = ({ navigation, getServices, cleanupServices }) => {
   return (
     <AppLayout title="Услуги">
       <View style={styles.content}>
-        <Text>Services screen</Text>
+        {services.items.map((service) => (
+          <View key={service.id} style={styles.service}>
+            <Text style={styles.serviceName}>{service.name}</Text>
+            <View style={styles.delimiter} />
+            <View style={styles.buttons}>
+              <Button onPress={alert} containerStyle={styles.buttonContainer} style={styles.button}>
+                Записаться
+              </Button>
+              <Button onPress={alert} containerStyle={styles.buttonContainer} style={styles.button}>
+                Посмотреть вопросы
+              </Button>
+            </View>
+          </View>
+        ))}
       </View>
     </AppLayout>
   );
 };
 
-export default connect(null, { getServices, cleanupServices })(Services);
+export default connect(({ services }) => ({ services }), { getServices, cleanupServices })(
+  Services,
+);
