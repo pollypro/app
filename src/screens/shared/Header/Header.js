@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <View style={styles.header}>
       <Button style={styles.button} onPress={() => navigation.openDrawer()}>
-        <Icon name="menu-outline" style={styles.menuIcon} />
+        <Icon name="menu-outline" style={styles.menuIcon} fill="#2662F0" />
         Меню
       </Button>
     </View>
