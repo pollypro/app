@@ -11,7 +11,9 @@ const reduxConnector = connect(({ auth }: State) => ({ token: auth.token }));
 type Props = ConnectedProps<typeof reduxConnector>;
 
 const RootNavigator: FC<Props> = ({ token }) => (
-  <NavigationContainer ref={(navigatorRef) => NavigationService.setTopLevelNavigator(navigatorRef)}>
+  <NavigationContainer
+    ref={(navigatorRef) => NavigationService.setTopLevelNavigator(navigatorRef)}
+  >
     {token ? <AppNavigation /> : <AuthNavigator />}
   </NavigationContainer>
 );

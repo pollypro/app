@@ -10,15 +10,31 @@ const ResultsStack = createStackNavigator();
 
 const ResultsStackStackNavigator = () => (
   <ResultsStack.Navigator>
-    <ResultsStack.Screen name="Results" component={Results} options={{ headerShown: false }} />
-    <ResultsStack.Screen name="Result" component={Result} options={{ headerShown: false }} />
+    <ResultsStack.Screen
+      name="Results"
+      component={Results}
+      options={{ headerShown: false }}
+    />
+    <ResultsStack.Screen
+      name="Result"
+      component={Result}
+      options={{ headerShown: false }}
+    />
   </ResultsStack.Navigator>
 );
 
 const ServicesStackNavigator = () => (
   <ServicesStack.Navigator>
-    <ServicesStack.Screen name="Services" component={Services} options={{ headerShown: false }} />
-    <ServicesStack.Screen name="Service" component={Service} options={{ headerShown: false }} />
+    <ServicesStack.Screen
+      name="Services"
+      component={Services}
+      options={{ headerShown: false }}
+    />
+    <ServicesStack.Screen
+      name="Service"
+      component={Service}
+      options={{ headerShown: false }}
+    />
   </ServicesStack.Navigator>
 );
 

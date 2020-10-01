@@ -8,7 +8,11 @@ const AuthStack = createStackNavigator<AuthParamList>();
 
 const AuthStackNavigator = () => (
   <AuthStack.Navigator initialRouteName={Routes.SignIn} mode="card">
-    <AuthStack.Screen name={Routes.SignIn} component={SignIn} options={{ headerShown: false }} />
+    <AuthStack.Screen
+      name={Routes.SignIn}
+      component={SignIn}
+      options={{ headerShown: false }}
+    />
     <AuthStack.Screen
       name={Routes.ForgetPassword}
       component={ForgetPassword}

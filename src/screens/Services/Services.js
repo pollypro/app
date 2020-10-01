@@ -29,10 +29,18 @@ const Services = ({ navigation, services, getServices, cleanupServices }) => {
             <Text style={styles.serviceName}>{service.name}</Text>
             <View style={styles.delimiter} />
             <View style={styles.buttons}>
-              <Button onPress={alert} containerStyle={styles.buttonContainer} style={styles.button}>
+              <Button
+                onPress={alert}
+                containerStyle={styles.buttonContainer}
+                style={styles.button}
+              >
                 Записаться
               </Button>
-              <Button onPress={alert} containerStyle={styles.buttonContainer} style={styles.button}>
+              <Button
+                onPress={alert}
+                containerStyle={styles.buttonContainer}
+                style={styles.button}
+              >
                 Посмотреть вопросы
               </Button>
             </View>
@@ -43,6 +51,7 @@ const Services = ({ navigation, services, getServices, cleanupServices }) => {
   );
 };
 
-export default connect(({ services }) => ({ services }), { getServices, cleanupServices })(
-  Services,
-);
+export default connect(({ services }) => ({ services }), {
+  getServices,
+  cleanupServices,
+})(Services);

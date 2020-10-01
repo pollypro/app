@@ -14,7 +14,9 @@ const AppDrawerContent = ({ navigation }) => {
     <Drawer contentContainerStyle={styles.drawer}>
       <SafeAreaView>
         <DrawerItem
-          title={() => <ListItem title="Результаты" onPress={handleItemPress('Results')} />}
+          title={() => (
+            <ListItem title="Результаты" onPress={handleItemPress('Results')} />
+          )}
         />
         <DrawerItem
           title={() => <ListItem title="Услуги" onPress={handleItemPress('Services')} />}

@@ -13,7 +13,10 @@ import { State } from '../../../../types/redux';
 // imports from styles
 import styles from './styles';
 
-const reduxConnector = connect(({ auth }: State) => ({ auth }), { authenticate, cleanupAuth });
+const reduxConnector = connect(({ auth }: State) => ({ auth }), {
+  authenticate,
+  cleanupAuth,
+});
 
 type Props = ConnectedProps<typeof reduxConnector>;
 

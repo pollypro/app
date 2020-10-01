@@ -15,6 +15,6 @@ export default StyleSheet.create({
     color: '#414D55',
     lineHeight: 40,
     marginBottom: 20,
-    fontFamily: 'Rubik-Medium'
+    fontFamily: 'Rubik-Medium',
   },
 });
