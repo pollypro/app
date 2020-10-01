@@ -10,9 +10,10 @@ import styles from './styles';
 
 type Props = {
   title?: string;
+  renderBackButton?: boolean;
 };
 
-const AppLayout: FC<Props> = ({ children, title }) => (
+const AppLayout: FC<Props> = ({ children, title, renderBackButton = false }) => (
   <ImageBackground
     source={require('../../../resources/images/background.png')}
     style={styles.background}
@@ -20,7 +21,7 @@ const AppLayout: FC<Props> = ({ children, title }) => (
   >
     <SafeAreaView>
       <View style={styles.content}>
-        <Header />
+        <Header renderBackButton={renderBackButton} />
         {title && <Text style={styles.title}>{title}</Text>}
         {children}
       </View>
