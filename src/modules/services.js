@@ -45,7 +45,7 @@ export const getServices = () => (dispatch) => {
   return httpClient
     .post(coreApiUrl('/services/list-services'))
     .then(({ data }) => {
-      dispatch({ type: SUCCESS, payload: { item: data } });
+      dispatch({ type: SUCCESS, payload: { items: data } });
     })
     .catch(({ error }) => {
       dispatch({ type: FAILURE, payload: { error } });
