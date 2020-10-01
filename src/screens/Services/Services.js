@@ -21,11 +21,16 @@ const Services = ({ navigation, services, getServices, cleanupServices }) => {
     };
   }, []);
 
+  const getServiceStyle = (i) =>
+    i + 1 < services.items.length
+      ? [styles.service, styles.serviceMargin]
+      : styles.service;
+
   return (
     <AppLayout title="Услуги">
       <View style={styles.content}>
-        {services.items.map((service) => (
-          <View key={service.id} style={styles.service}>
+        {services.items.map((service, i) => (
+          <View key={service.id} style={getServiceStyle(i)}>
             <Text style={styles.serviceName}>{service.name}</Text>
             <View style={styles.delimiter} />
             <View style={styles.buttons}>

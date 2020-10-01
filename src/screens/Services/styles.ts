@@ -12,6 +12,9 @@ export default StyleSheet.create({
     paddingHorizontal: 18,
     paddingVertical: 20,
   },
+  serviceMargin: {
+    marginBottom: 20,
+  },
   serviceName: {
     fontSize: 16,
     lineHeight: 20,
