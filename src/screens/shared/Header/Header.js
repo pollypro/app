@@ -1,7 +1,8 @@
 // imports from vendors
 import React from 'react';
 import { View } from 'react-native';
-import { Icon, Button } from '@ui-kitten/components';
+import { Icon } from '@ui-kitten/components';
+import Button from 'react-native-button';
 import { useNavigation } from '@react-navigation/native';
 
 // imports from styles
@@ -12,13 +13,8 @@ const Header = () => {
 
   return (
     <View style={styles.header}>
-      <Button
-        appearance="ghost"
-        onPress={() => navigation.openDrawer()}
-        accessoryLeft={(props) => (
-          <Icon {...props} name="menu-outline" style={styles.menuIcon} fill="#2662F0" />
-        )}
-      >
+      <Button style={styles.button} onPress={() => navigation.openDrawer()}>
+        <Icon name="menu-outline" style={styles.menuIcon} />
         Меню
       </Button>
     </View>
