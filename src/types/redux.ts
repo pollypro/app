@@ -2,6 +2,7 @@
 import { IHttpError } from '../utils/httpError';
 
 // imports from types
+import { Question } from './questions';
 import { User } from './users';
 import { Service } from './services';
 
@@ -42,6 +43,7 @@ export type State = {
     token?: string;
     error?: IHttpError;
   };
+  questions: ListNode<Question>;
   self: ItemNode<User>;
   services: ListNode<Service>;
 };
