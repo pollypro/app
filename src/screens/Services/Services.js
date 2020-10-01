@@ -44,7 +44,7 @@ const Services = ({ navigation, services, getServices, cleanupServices }) => {
                 Записаться
               </Button>
               <Button
-                onPress={alert}
+                onPress={() => navigation.navigate('Service', { serviceId: service.id })}
                 containerStyle={styles.buttonContainer}
                 style={styles.button}
               >
