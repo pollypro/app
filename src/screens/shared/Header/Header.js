@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 // imports from styles
 import styles from './styles';
 
-const Header = () => {
+const Header = ({ renderBackButton }) => {
   const navigation = useNavigation();
 
   return (
@@ -17,6 +17,11 @@ const Header = () => {
         <Icon name="menu-outline" style={styles.menuIcon} fill="#2662F0" />
         Меню
       </Button>
+      {renderBackButton && (
+        <Button style={styles.button} onPress={() => navigation.goBack()}>
+          Назад
+        </Button>
+      )}
     </View>
   );
 };
