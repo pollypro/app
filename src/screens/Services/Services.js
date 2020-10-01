@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import Button from 'react-native-button';
+import { Icon } from '@ui-kitten/components';
 import { connect } from 'react-redux';
 
 // imports from components
@@ -39,6 +40,7 @@ const Services = ({ navigation, services, getServices, cleanupServices }) => {
                 containerStyle={styles.buttonContainer}
                 style={styles.button}
               >
+                <Icon style={styles.icon} fill="#2662f0" name="calendar-outline" />
                 Записаться
               </Button>
               <Button

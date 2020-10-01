@@ -51,4 +51,9 @@ export default StyleSheet.create({
     fontFamily: 'Rubik-Regular',
     fontWeight: 'normal',
   },
+  icon: {
+    width: 16,
+    height: 16,
+    marginRight: 4,
+  },
 });
