@@ -9,15 +9,15 @@ import AppLayout from '../shared/AppLayout/AppLayout';
 // imports from modules
 import { getQuestions, cleanupQuestions } from '../../modules/questions';
 
-const Service = ({ route, getQuestions, cleanupQuestions }) => {
-  const serviceId = route.params.serviceId;
+const Test = ({ route, getQuestions, cleanupQuestions }) => {
+  const testId = route.params.testId;
 
   useEffect(() => {
-    getQuestions(serviceId);
+    getQuestions(testId);
     return () => {
       cleanupQuestions();
     };
-  }, [serviceId]);
+  }, [testId]);
 
   return (
     <AppLayout renderBackButton>
@@ -28,4 +28,4 @@ const Service = ({ route, getQuestions, cleanupQuestions }) => {
   );
 };
 
-export default connect(null, { getQuestions, cleanupQuestions })(Service);
+export default connect(null, { getQuestions, cleanupQuestions })(Test);
