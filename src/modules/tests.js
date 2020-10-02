@@ -43,7 +43,7 @@ export const getTests = () => (dispatch) => {
   dispatch({ type: REQUEST });
 
   return httpClient
-    .post(coreApiUrl('/tests/list-test'))
+    .post(coreApiUrl('/tests/list-tests'))
     .then(({ data }) => {
       dispatch({ type: SUCCESS, payload: { items: data } });
     })
