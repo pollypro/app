@@ -1,13 +1,26 @@
 // imports from vendors
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
 
 // imports from components
 import AppLayout from '../shared/AppLayout/AppLayout';
 
-const Service = () => {
+// imports from modules
+import { getQuestions, cleanupQuestions } from '../../modules/questions';
+
+const Service = ({ route, getQuestions, cleanupQuestions }) => {
+  const serviceId = route.params.serviceId;
+
+  useEffect(() => {
+    getQuestions(serviceId);
+    return () => {
+      cleanupQuestions();
+    };
+  }, [serviceId]);
+
   return (
-    <AppLayout>
+    <AppLayout renderBackButton>
       <View>
         <Text>Service screen</Text>
       </View>
@@ -15,4 +28,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default connect(null, { getQuestions, cleanupQuestions })(Service);
