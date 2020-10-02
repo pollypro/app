@@ -9,30 +9,28 @@ import { connect } from 'react-redux';
 import AppLayout from '../shared/AppLayout/AppLayout';
 
 // imports from modules
-import { getServices, cleanupServices } from '../../modules/services';
+import { getTests, cleanupTests } from '../../modules/tests';
 
 // imports from styles
 import styles from './styles';
 
-const Services = ({ navigation, services, getServices, cleanupServices }) => {
+const Tests = ({ navigation, tests, getTests, cleanupTests }) => {
   useEffect(() => {
-    getServices();
+    getTests();
     return () => {
-      cleanupServices();
+      cleanupTests();
     };
   }, []);
 
-  const getServiceStyle = (i) =>
-    i + 1 < services.items.length
-      ? [styles.service, styles.serviceMargin]
-      : styles.service;
+  const getTestStyle = (i) =>
+    i + 1 < tests.items.length ? [styles.test, styles.testMargin] : styles.test;
 
   return (
     <AppLayout title="Услуги">
       <View style={styles.content}>
-        {services.items.map((service, i) => (
-          <View key={service.id} style={getServiceStyle(i)}>
-            <Text style={styles.serviceName}>{service.name}</Text>
+        {tests.items.map((test, i) => (
+          <View key={test.id} style={getTestStyle(i)}>
+            <Text style={styles.testName}>{test.name}</Text>
             <View style={styles.delimiter} />
             <View style={styles.buttons}>
               <Button
@@ -44,7 +42,7 @@ const Services = ({ navigation, services, getServices, cleanupServices }) => {
                 Записаться
               </Button>
               <Button
-                onPress={() => navigation.navigate('Service', { serviceId: service.id })}
+                onPress={() => navigation.navigate('Test', { testId: test.id })}
                 containerStyle={styles.buttonContainer}
                 style={styles.button}
               >
@@ -58,7 +56,4 @@ const Services = ({ navigation, services, getServices, cleanupServices }) => {
   );
 };
 
-export default connect(({ services }) => ({ services }), {
-  getServices,
-  cleanupServices,
-})(Services);
+export default connect(({ tests }) => ({ tests }), { getTests, cleanupTests })(Tests);

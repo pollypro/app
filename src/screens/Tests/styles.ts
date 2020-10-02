@@ -7,15 +7,15 @@ export default StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 18,
   },
-  service: {
+  test: {
     backgroundColor: '#fafbfd',
     paddingHorizontal: 18,
     paddingVertical: 20,
   },
-  serviceMargin: {
+  testMargin: {
     marginBottom: 20,
   },
-  serviceName: {
+  testName: {
     fontSize: 16,
     lineHeight: 20,
     color: '#414d55',
