@@ -15,7 +15,7 @@ import {
   cleanupAction,
 } from '../utils/redux';
 
-const MODULE_NAME_ROOT = 'SERVICES';
+const MODULE_NAME_ROOT = 'TESTS';
 const REQUEST = requestAction(MODULE_NAME_ROOT);
 const SUCCESS = successAction(MODULE_NAME_ROOT);
 const FAILURE = failureAction(MODULE_NAME_ROOT);
@@ -37,13 +37,13 @@ export default createReducer(
   initialState,
 );
 
-export const cleanupServices = () => ({ type: CLEANUP });
+export const cleanupTests = () => ({ type: CLEANUP });
 
-export const getServices = () => (dispatch) => {
+export const getTests = () => (dispatch) => {
   dispatch({ type: REQUEST });
 
   return httpClient
-    .post(coreApiUrl('/services/list-services'))
+    .post(coreApiUrl('/tests/list-test'))
     .then(({ data }) => {
       dispatch({ type: SUCCESS, payload: { items: data } });
     })

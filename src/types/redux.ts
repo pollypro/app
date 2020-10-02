@@ -4,7 +4,7 @@ import { IHttpError } from '../utils/httpError';
 // imports from types
 import { Question } from './questions';
 import { User } from './users';
-import { Service } from './services';
+import { Test } from './tests';
 
 type ListNode<T> = {
   isLoading: boolean;
@@ -45,5 +45,5 @@ export type State = {
   };
   questions: ListNode<Question>;
   self: ItemNode<User>;
-  services: ListNode<Service>;
+  tests: ListNode<Test>;
 };
