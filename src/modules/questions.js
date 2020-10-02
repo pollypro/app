@@ -43,7 +43,7 @@ export const getQuestions = (serviceId) => (dispatch) => {
   dispatch({ type: REQUEST });
 
   return httpClient
-    .post(coreApiUrl('/questions/list-services'), { query: { serviceId } })
+    .post(coreApiUrl('/questions/list-questions'), { query: { serviceId } })
     .then(({ data }) => {
       dispatch({ type: SUCCESS, payload: { items: data } });
     })
