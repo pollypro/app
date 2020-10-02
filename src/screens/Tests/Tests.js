@@ -1,5 +1,6 @@
 // imports from vendors
-import React, { useEffect } from 'react';
+import React, { useCallback } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import { View, Text } from 'react-native';
 import Button from 'react-native-button';
 import { Icon } from '@ui-kitten/components';
@@ -15,12 +16,12 @@ import { getTests, cleanupTests } from '../../modules/tests';
 import styles from './styles';
 
 const Tests = ({ navigation, tests, getTests, cleanupTests }) => {
-  useEffect(() => {
-    getTests();
-    return () => {
-      cleanupTests();
-    };
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      getTests();
+      return () => cleanupTests();
+    }, []),
+  );
 
   const getTestStyle = (i) =>
     i + 1 < tests.items.length ? [styles.test, styles.testMargin] : styles.test;
