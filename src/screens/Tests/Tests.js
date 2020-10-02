@@ -26,7 +26,7 @@ const Tests = ({ navigation, tests, getTests, cleanupTests }) => {
     i + 1 < tests.items.length ? [styles.test, styles.testMargin] : styles.test;
 
   return (
-    <AppLayout title="Услуги">
+    <AppLayout title="Тесты">
       <View style={styles.content}>
         {tests.items.map((test, i) => (
           <View key={test.id} style={getTestStyle(i)}>
