@@ -1,5 +1,6 @@
 // imports from vendors
-import React, { useEffect } from 'react';
+import React, { useCallback } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -12,12 +13,12 @@ import { getQuestions, cleanupQuestions } from '../../modules/questions';
 const Test = ({ route, getQuestions, cleanupQuestions }) => {
   const testId = route.params.testId;
 
-  useEffect(() => {
-    getQuestions(testId);
-    return () => {
-      cleanupQuestions();
-    };
-  }, [testId]);
+  useFocusEffect(
+    useCallback(() => {
+      getQuestions(testId);
+      return () => cleanupQuestions();
+    }, [testId]),
+  );
 
   return (
     <AppLayout renderBackButton>
