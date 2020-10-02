@@ -19,7 +19,7 @@ const AppDrawerContent = ({ navigation }) => {
           )}
         />
         <DrawerItem
-          title={() => <ListItem title="Услуги" onPress={handleItemPress('Services')} />}
+          title={() => <ListItem title="Тесты" onPress={handleItemPress('Tests')} />}
         />
         <DrawerItem title={() => <ListItem title="Запись" />} />
       </SafeAreaView>
