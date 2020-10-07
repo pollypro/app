@@ -19,7 +19,7 @@ const AppLayout: FC<Props> = ({ children, title, renderBackButton = false }) => 
     style={styles.background}
     resizeMode="cover"
   >
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Header renderBackButton={renderBackButton} />
         {title && <Text style={styles.title}>{title}</Text>}

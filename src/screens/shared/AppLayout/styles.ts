@@ -5,7 +5,11 @@ export default StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  container: {
+    flex: 1,
+  },
   content: {
+    flex: 1,
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 20,
