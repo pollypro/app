@@ -40,7 +40,7 @@ const Tests = ({ navigation, tests, getTests, cleanupTests }) => {
             <View style={styles.delimiter} />
             <View style={styles.buttons}>
               <Button
-                onPress={alert}
+                onPress={() => navigation.navigate('Booking', { testId: test.id })}
                 containerStyle={styles.buttonContainer}
                 style={styles.button}
               >
