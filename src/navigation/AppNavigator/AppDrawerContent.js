@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, SafeAreaView } from 'react-native';
-import { Drawer, DrawerItem, Icon, ListItem } from '@ui-kitten/components';
+import { Drawer, DrawerItem, Icon } from '@ui-kitten/components';
 import Button from 'react-native-button';
 
 // imports from modules
@@ -20,18 +20,37 @@ const AppDrawerContent = ({ navigation, destroyAuth }) => {
       <SafeAreaView>
         <DrawerItem
           title={() => (
-            <ListItem title="Результаты" onPress={handleItemPress('Results')} />
+            <Button style={styles.button} onPress={handleItemPress('Results')}>
+              <Icon
+                style={styles.buttonIcon}
+                fill="#414d55"
+                name="checkmark-square-outline"
+              />
+              Результаты
+            </Button>
           )}
         />
         <DrawerItem
-          title={() => <ListItem title="Тесты" onPress={handleItemPress('Tests')} />}
+          title={() => (
+            <Button style={styles.button} onPress={handleItemPress('Tests')}>
+              <Icon style={styles.buttonIcon} fill="#414d55" name="list-outline" />
+              Тесты
+            </Button>
+          )}
         />
-        <DrawerItem title={() => <ListItem title="Запись" />} />
         <DrawerItem
           title={() => (
-            <Button style={styles.logoutButton} onPress={destroyAuth}>
+            <Button style={styles.button}>
+              <Icon style={styles.buttonIcon} fill="#414d55" name="calendar-outline" />
+              Записи
+            </Button>
+          )}
+        />
+        <DrawerItem
+          title={() => (
+            <Button style={styles.button} onPress={destroyAuth}>
               <Icon
-                style={styles.logoutIcon}
+                style={styles.buttonIcon}
                 fill="#414d55"
                 name="close-circle-outline"
               />
@@ -51,12 +70,12 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
   },
-  logoutIcon: {
+  buttonIcon: {
     width: 16,
     height: 16,
     marginRight: 16,
   },
-  logoutButton: {
+  button: {
     // font-family: Helvetica;
     fontSize: 16,
     color: '#414d55',
