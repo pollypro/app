@@ -1,7 +1,7 @@
 // imports from vendors
 import React, { useCallback } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 
 // imports from components
@@ -10,7 +10,10 @@ import AppLayout from '../shared/AppLayout/AppLayout';
 // imports from modules
 import { getQuestions, cleanupQuestions } from '../../modules/questions';
 
-const Test = ({ route, getQuestions, cleanupQuestions }) => {
+// imports from styles
+import styles from './styles';
+
+const Test = ({ route, questions, getQuestions, cleanupQuestions }) => {
   const testId = route.params.testId;
 
   useFocusEffect(
@@ -21,12 +24,20 @@ const Test = ({ route, getQuestions, cleanupQuestions }) => {
   );
 
   return (
-    <AppLayout renderBackButton>
-      <View>
-        <Text>Service screen</Text>
-      </View>
+    <AppLayout renderBackButton title="Вопросы теста">
+      <ScrollView style={styles.content}>
+        {questions.items.map((item) => (
+          <View key={item.id} styles={styles.questionBlock}>
+            <Text style={styles.questionText}>{item.question}</Text>
+            <View style={styles.delimiter} />
+          </View>
+        ))}
+      </ScrollView>
     </AppLayout>
   );
 };
 
-export default connect(null, { getQuestions, cleanupQuestions })(Test);
+export default connect(({ questions }) => ({ questions }), {
+  getQuestions,
+  cleanupQuestions,
+})(Test);
