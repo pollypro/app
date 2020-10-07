@@ -1,3 +1,4 @@
+export { default as Booking } from './Booking/Booking';
 export { default as ForgetPassword } from './ForgetPassword/ForgetPassword';
 export { default as Result } from './Result/Result';
 export { default as Results } from './Results/Results';
