@@ -2,6 +2,7 @@
 import React, { useCallback } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import { View, Text, ScrollView } from 'react-native';
+import { Spinner } from '@ui-kitten/components';
 import { connect } from 'react-redux';
 
 // imports from components
@@ -25,14 +26,23 @@ const Test = ({ route, questions, getQuestions, cleanupQuestions }) => {
 
   return (
     <AppLayout renderBackButton title="Вопросы теста">
-      <ScrollView style={styles.content}>
-        {questions.items.map((item) => (
-          <View key={item.id} styles={styles.questionBlock}>
-            <Text style={styles.questionText}>{item.question}</Text>
-            <View style={styles.delimiter} />
+      {questions.isLoading && (
+        <View style={styles.content}>
+          <View style={styles.spinnerContainer}>
+            <Spinner style={styles.spinner} />
           </View>
-        ))}
-      </ScrollView>
+        </View>
+      )}
+      {!questions.isLoading && (
+        <ScrollView style={styles.content}>
+          {questions.items.map((item) => (
+            <View key={item.id} styles={styles.questionBlock}>
+              <Text style={styles.questionText}>{item.question}</Text>
+              <View style={styles.delimiter} />
+            </View>
+          ))}
+        </ScrollView>
+      )}
     </AppLayout>
   );
 };

@@ -6,11 +6,20 @@ export default StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 20,
     paddingVertical: 18,
+    height: '100%',
+    flex: 1,
   },
-  test: {
-    backgroundColor: '#fafbfd',
-    paddingHorizontal: 18,
-    paddingVertical: 20,
+  spinnerContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  spinner: {
+    borderColor: '#2662f0',
   },
   questionBlock: {
     marginVertical: 20,
