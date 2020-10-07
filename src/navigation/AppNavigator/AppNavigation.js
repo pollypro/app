@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Result, Results, Test, Tests } from '../../screens';
+import { Booking, Result, Results, Test, Tests } from '../../screens';
 import AppDrawerContent from './AppDrawerContent';
 
 const AppDrawer = createDrawerNavigator();
@@ -27,6 +27,11 @@ const TestsStackNavigator = () => (
   <TestsStack.Navigator>
     <TestsStack.Screen name="Tests" component={Tests} options={{ headerShown: false }} />
     <TestsStack.Screen name="Test" component={Test} options={{ headerShown: false }} />
+    <TestsStack.Screen
+      name="Booking"
+      component={Booking}
+      options={{ headerShown: false }}
+    />
   </TestsStack.Navigator>
 );
 
