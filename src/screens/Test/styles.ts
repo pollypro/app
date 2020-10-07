@@ -21,6 +21,10 @@ export default StyleSheet.create({
   spinner: {
     borderColor: '#2662f0',
   },
+  questions: {
+    height: '100%',
+    flex: 1,
+  },
   questionBlock: {
     marginVertical: 20,
   },
@@ -34,5 +38,17 @@ export default StyleSheet.create({
     borderBottomColor: '#a2c0d4',
     borderRadius: 1,
     marginVertical: 20,
+  },
+  buttonBookContainer: {
+    backgroundColor: '#2662f0',
+    paddingVertical: 10,
+    borderRadius: 8,
+  },
+  buttonBook: {
+    color: '#fff',
+    fontFamily: 'Rubik-Regular',
+    fontWeight: 'normal',
+    fontSize: 14,
+    lineHeight: 20,
   },
 });
