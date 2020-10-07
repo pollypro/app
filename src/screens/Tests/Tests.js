@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import { View, Text } from 'react-native';
 import Button from 'react-native-button';
-import { Icon } from '@ui-kitten/components';
+import { Icon, Spinner } from '@ui-kitten/components';
 import { connect } from 'react-redux';
 
 // imports from components
@@ -29,6 +29,11 @@ const Tests = ({ navigation, tests, getTests, cleanupTests }) => {
   return (
     <AppLayout title="Тесты">
       <View style={styles.content}>
+        {tests.isLoading && (
+          <View style={styles.spinnerContainer}>
+            <Spinner style={styles.spinner} />
+          </View>
+        )}
         {tests.items.map((test, i) => (
           <View key={test.id} style={getTestStyle(i)}>
             <Text style={styles.testName}>{test.name}</Text>
